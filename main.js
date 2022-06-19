@@ -89,8 +89,6 @@ window.addEventListener('resize', event => {
 
     // Add transition back
     addTransition = setTimeout(() => {
-        console.log('fired');
-
         slider.classList.add('transition');
     }, 200);
 });

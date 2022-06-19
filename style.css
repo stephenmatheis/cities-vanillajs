@@ -109,6 +109,7 @@ nav {
 @media screen and (max-width: 700px) {
     body {
         flex-direction: row;
+        padding-right: 0px;
     }
 
     header {
