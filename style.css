@@ -1,0 +1,155 @@
+/* Global Styles */
+:root {
+    --default: darkgray;
+    --light: lightgray;
+    --hover: rgb(104, 153, 202);
+    --selected: #1e1e1e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+}
+
+body {
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.opaque {
+    opacity: 0;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.city {
+    user-select: none;
+    cursor: pointer;
+    color: var(--default);
+    font-weight: 300;
+    transition: color 100ms ease-in-out;
+}
+
+.city:hover {
+    color: var(--hover);
+}
+
+.city.selected {
+    color: var(--selected);
+}
+
+/* Slider */
+#bar {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--light);
+}
+
+#slider {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 1px;
+    width: 0px;
+    background-color: var(--selected);
+}
+
+#slider.transition {
+    transition: height 300ms ease-in-out,
+                width 300ms ease-in-out,
+                top 300ms ease-in-out,
+                left 300ms ease-in-out;
+}
+
+/* Time */
+#time {
+    display: flex;
+    font-size: 20vw;
+    font-weight: 100;
+}
+
+.unit {
+    display: none;
+}
+
+#hh, #mm, #ss {
+    width: 23vw;
+}
+
+#time-zone {
+    margin-top: 1.25em;
+    text-align: center;
+    font-size: 1.25em;
+    height: 2.5em;
+}
+
+/* Responsize styles */
+@media screen and (max-width: 700px) {
+    body {
+        flex-direction: row;
+    }
+
+    header {
+        display: flex;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #bar {
+        margin-top: 0px;
+        margin-left: 10px;
+        height: 100%;
+        width: 1px;
+        background-color: var(--light);
+    }
+    
+    #slider {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 0px;
+        width: 1px;
+        background-color: var(--selected);
+    }
+
+    #time {
+        flex-direction: column;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .time-block {
+        display: flex;
+    }
+
+    .unit {
+        display: block;
+    }
+}
